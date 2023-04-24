@@ -1,6 +1,6 @@
 import React, { lazy, Suspense, useState } from 'react'
 import { observer } from 'mobx-react-lite'
-// import { useStore } from '@/hooks'
+import { useStore } from '@/hooks'
 import { Demo1 } from '@/components'
 
 // 使用import语法配合react的Lazy动态引入资源
@@ -19,8 +19,10 @@ import './index.css'
 import './index.less'
 
 const App = observer(() => {
-  // const [{appStore}] = useStore()
+  const [{appStore}] = useStore()
   const [show, setShow] = useState(false)
+
+  debugger
 
   return (
     <div className="app">
