@@ -15,9 +15,10 @@
     "analy": "cross-env NODE_ENV=production BASE_ENV=production webpack -c build/webpack.analy.js",
     "lint": "eslint src/**/*.{ts,tsx}",
     "lint:fix": "eslint src/**/*.{ts,tsx} --fix",
-    "lint:staged": "eslint --max-warnings=0",
+    "lint:staged": "eslint src/**/*.{ts,tsx} --max-warnings=0",
     "pre-check": "npx lint-staged",
-    "stylelint": "stylelint src/**/*.{css,less,scss}"
+    "stylelint": "stylelint src/**/*.{css,less,scss}",
+    "stylelint:fix": "stylelint src/**/*.{css,less,scss} --fix"
   },
   "keywords": [],
   "author": "zzc",
