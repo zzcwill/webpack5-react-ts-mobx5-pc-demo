@@ -1,9 +1,10 @@
 import { observable, action } from 'mobx'
-import { BaseStore } from '../base-store'
 import { testApi } from '@/api'
 import { sleep } from '@/utils/sleep'
 import { urlWay } from '@/utils/url-way'
 import { numWay } from '@/utils/num-way'
+
+import { BaseStore } from '../base-store'
 
 export class AppStore extends BaseStore {
   @observable token = 'token'
