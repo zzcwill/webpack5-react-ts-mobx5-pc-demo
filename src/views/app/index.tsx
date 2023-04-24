@@ -22,7 +22,11 @@ const App = observer(() => {
   const [{appStore}] = useStore()
   const [show, setShow] = useState(false)
 
-  debugger
+  const getNum = (num: number) => {
+    console.info(num)
+  }
+
+  getNum('1')
 
   return (
     <div className="app">
