@@ -30,12 +30,12 @@ module.exports = {
     'camelcase': 'error', // 变量名必须使用驼峰式
     'no-debugger': 1,
      '@typescript-eslint/no-explicit-any': 'off', // ts可以设置any
+     '@typescript-eslint/no-var-requires': 'off', // ts引入可以require
       // '@typescript-eslint/type-annotation-spacing': 'error',
       // '@typescript-eslint/no-shadow': 'error',
       // '@typescript-eslint/explicit-module-boundary-types': 'off',
       // '@typescript-eslint/no-empty-function': 'off',
       // '@typescript-eslint/ban-ts-comment': 'off',
-      // '@typescript-eslint/no-var-requires': 'off',
       // '@typescript-eslint/member-delimiter-style': 'off',
       // '@typescript-eslint/no-empty-interface': 'off',
   },

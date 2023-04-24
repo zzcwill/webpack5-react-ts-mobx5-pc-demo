@@ -17,15 +17,16 @@ module.exports = merge(baseConfig, {
       directory: path.join(__dirname, '../public'), //托管静态资源public文件夹
     },
     open: ['/'],
-    // proxy: {
-    //   '/api': {
-    //     target: 'http://localhost:3000',
-    //     changeOrigin: true,
-    //   },
-    // },
-    // client: {
-    //   logging: 'error',
-    // },
+    proxy: {
+      '/api': {
+        target: 'https://cnodejs.org/api/v1',
+        changeOrigin: true,
+        ws: true,
+        pathRewrite: {
+          '^/api': '',
+        },
+      },
+    },
   },
   plugins: [
     new ReactRefreshWebpackPlugin(), // 添加热更新插件

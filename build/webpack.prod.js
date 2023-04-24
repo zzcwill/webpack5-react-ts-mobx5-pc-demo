@@ -1,7 +1,7 @@
 const path = require('path')
 const { merge } = require('webpack-merge')
-const CopyPlugin = require('copy-webpack-plugin');
-const TerserPlugin = require("terser-webpack-plugin");
+const CopyPlugin = require('copy-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const globAll = require('glob-all')
@@ -15,21 +15,21 @@ module.exports = merge(baseConfig, {
   plugins: [
     // 抽离css插件
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash:8].css' // 抽离css的输出目录和名称
-    }),  
+      filename: 'css/[name].[contenthash:8].css', // 抽离css的输出目录和名称
+    }),
     // MiniCssExtractPlugin和PurgeCSSPlugin配合使用清理无用css
     new PurgeCSSPlugin({
       // 检测src下所有tsx文件和public下index.html中使用的类名和id和标签名称
       // 只打包这些文件中用到的样式
       paths: globAll.sync([
         `${path.join(__dirname, '../src')}/**/*.tsx`,
-        path.join(__dirname, '../public/index.html')
+        path.join(__dirname, '../public/index.html'),
       ]),
       // 过滤以ant-开头的类名，哪怕没用到也不删除
       safelist: {
         standard: [/^ant-/],
-      }      
-    }),   
+      },
+    }),
     // 复制文件插件
     new CopyPlugin({
       patterns: [
@@ -38,7 +38,7 @@ module.exports = merge(baseConfig, {
           to: path.resolve(__dirname, '../dist'), // 复制到dist目录中
           filter: source => {
             return !source.includes('index.html') // 忽略index.html
-          }
+          },
         },
       ],
     }),
@@ -49,8 +49,8 @@ module.exports = merge(baseConfig, {
       algorithm: 'gzip', // 压缩格式,默认是gzip
       test: /.(js|css)$/, // 只生成css,js压缩文件
       threshold: 10240, // 只有大小大于该值的资源会被处理。默认值是 10k
-      minRatio: 0.8 // 压缩率,默认值是 0.8
-    }) 
+      minRatio: 0.8, // 压缩率,默认值是 0.8
+    }),
   ],
   optimization: {
     minimize: true,
@@ -60,12 +60,12 @@ module.exports = merge(baseConfig, {
         parallel: true, // 开启多线程压缩
         terserOptions: {
           compress: {
-            pure_funcs: ["console.log", "console.info"] // 删除console
-          }
+            pure_funcs: ['console.log', 'console.info'], // 删除console
+          },
         },
         // 去掉app.js.LICENSE.txt
         // 不将注释提取到单独的文件中
-        extractComments: false,        
+        extractComments: false,
       }),
     ],
     splitChunks: { // 分隔代码
@@ -83,8 +83,8 @@ module.exports = merge(baseConfig, {
           minChunks: 2, // 只要使用两次就提取出来
           chunks: 'initial', // 只提取初始化就能获取到的模块,不管异步的
           minSize: 0, // 提取代码体积大于0就提取出来
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 })
