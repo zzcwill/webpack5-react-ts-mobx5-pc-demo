@@ -2,11 +2,11 @@
 > webpack5-react-ts-mobx5-pc-demo
 
 ### 技术栈
-webpack5
-react18
-react-router6
-typescript5
-mobx5
+- webpack5
+- react18
+- react-router6
+- typescript5
+- mobx5
 
 
 
@@ -22,5 +22,5 @@ mobx5
 
 
 ### git-check
-npx husky add .husky/pre-commit 'npm run pre-check'
-npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'
+- npx husky add .husky/pre-commit 'npm run pre-check'
+- npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'
