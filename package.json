@@ -13,12 +13,12 @@
     "build:pre": "cross-env NODE_ENV=production BASE_ENV=pre webpack -c build/webpack.prod.js",
     "build:prod": "cross-env NODE_ENV=production BASE_ENV=prod webpack -c build/webpack.prod.js",
     "analy": "cross-env NODE_ENV=production BASE_ENV=production webpack -c build/webpack.analy.js",
-    "lint": "eslint src/**/*.{ts,tsx}",
-    "lint:fix": "eslint src/**/*.{ts,tsx} --fix",
-    "lint:staged": "eslint src/**/*.{ts,tsx} --max-warnings=0",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "lint:staged": "eslint src --max-warnings=0",
     "pre-check": "npx lint-staged",
-    "stylelint": "stylelint src/**/*.{css,less,scss}",
-    "stylelint:fix": "stylelint src/**/*.{css,less,scss} --fix"
+    "stylelint": "stylelint src",
+    "stylelint:fix": "stylelint src --fix"
   },
   "keywords": [],
   "author": "zzc",
@@ -85,10 +85,8 @@
     "react-router-dom": "^6.10.0"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": [
-      "npm run lint:staged"
-    ],
-    "src/**/*.{css,less,scss}": [
+    "src": [
+      "npm run lint:staged",
       "npm run stylelint"
     ]
   }
