@@ -1,5 +1,6 @@
 import React, { lazy, Suspense, useState } from 'react'
 import { observer } from 'mobx-react-lite'
+import classNames from 'classnames'
 import copyToClipboard from 'copy-to-clipboard'
 // import { useStore } from '@/hooks'
 import { Demo1 } from '@/components'
@@ -24,7 +25,7 @@ const App = observer(() => {
   const [show, setShow] = useState(false)
 
   return (
-    <div className="app">
+    <div className={classNames('app')}>
       <div className="info">info</div>
       <div className='txt'>txt</div>
       <img src={logo} onClick={() => { copyToClipboard('logo') }} />
