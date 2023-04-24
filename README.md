@@ -19,3 +19,8 @@ mobx5
 - npm run dev
 - 生成项目打包文件
 - npm run build
+
+
+### git-check
+npx husky add .husky/pre-commit 'npm run pre-check'
+npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'
