@@ -1,20 +1,28 @@
 import React from 'react'
 import { Navigate, useRoutes } from 'react-router-dom'
-import Global from '@/global'
+import Layout from '@/layout'
 import {
-  App,
+  Home,
+  Test,
 } from './dynamic-components'
 
 const routes = [
   {
     path: '/',
-    element: <Global />,
+    element: <Layout />,
     children: [
       {
         path: '',
-        element: <App />,
+        element: <Home />,
         meta: {
-          title: 'app',
+          title: 'Home',
+        },
+      },
+      {
+        path: '/test',
+        element: <Test />,
+        meta: {
+          title: 'Test',
         },
       },
       {

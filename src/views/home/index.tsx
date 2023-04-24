@@ -1,4 +1,8 @@
 import React, { lazy, Suspense, useState } from 'react'
+import {
+  // useLocation,
+  useNavigate,
+} from 'react-router-dom'
 import { observer } from 'mobx-react-lite'
 import classNames from 'classnames'
 import copyToClipboard from 'copy-to-clipboard'
@@ -20,14 +24,24 @@ import logo from '@/assets/images/logo.png'
 import './index.css'
 import './index.less'
 
-const App = observer(() => {
+const Home = observer(() => {
   // const [{appStore}] = useStore()
   const [show, setShow] = useState(false)
+  const navigate = useNavigate()
+
+
 
   return (
-    <div className={classNames('app')}>
+    <div className={classNames('home')}>
       <div className="info">info</div>
-      <div className='txt'>txt</div>
+      <div
+        className='txt'
+        onClick={() => {
+          navigate({ pathname: '/test', search: '?name=1' })
+        }}
+      >
+        to-test-url
+      </div>
       <img src={logo} onClick={() => { copyToClipboard('logo') }} />
       <br />
       <Demo1 />
@@ -46,4 +60,4 @@ const App = observer(() => {
   )
 })
 
-export default App
+export default Home
