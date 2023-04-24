@@ -27,17 +27,19 @@ module.exports = {
     'semi': ['error', 'never'], // 一行结尾不加分号
     'quotes': ['error', 'single'], // 单引号
     'comma-dangle': ['error', 'always-multiline'], // 对象或数组多行，最后一个值加逗号
-    'camelcase': 'error', // 变量名必须使用驼峰式
     'no-debugger': 1,
-     '@typescript-eslint/no-explicit-any': 'off', // ts可以设置any
-     '@typescript-eslint/no-var-requires': 'off', // ts引入可以require
-      // '@typescript-eslint/type-annotation-spacing': 'error',
-      // '@typescript-eslint/no-shadow': 'error',
-      // '@typescript-eslint/explicit-module-boundary-types': 'off',
-      // '@typescript-eslint/no-empty-function': 'off',
-      // '@typescript-eslint/ban-ts-comment': 'off',
-      // '@typescript-eslint/member-delimiter-style': 'off',
-      // '@typescript-eslint/no-empty-interface': 'off',
+    'no-unused-vars': 0,
+    '@typescript-eslint/no-unused-vars': 1, // ts变量不使用关闭
+    '@typescript-eslint/no-explicit-any': 0, // ts可以设置any
+    '@typescript-eslint/no-var-requires': 0, // ts引入可以require
+    // '@typescript-eslint/explicit-module-boundary-types': 0,
+    // '@typescript-eslint/type-annotation-spacing': 'error',
+    // '@typescript-eslint/no-shadow': 'error',
+    // '@typescript-eslint/explicit-module-boundary-types': 'off',
+    // '@typescript-eslint/no-empty-function': 'off',
+    // '@typescript-eslint/ban-ts-comment': 'off',
+    // '@typescript-eslint/member-delimiter-style': 'off',
+    // '@typescript-eslint/no-empty-interface': 'off',
   },
   // eslint检测react版本
   settings: {

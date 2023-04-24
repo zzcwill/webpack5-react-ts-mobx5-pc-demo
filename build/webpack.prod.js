@@ -6,7 +6,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const globAll = require('glob-all')
 const PurgeCSSPlugin = require('purgecss-webpack-plugin')
-const glob = require('glob')
 const CompressionPlugin  = require('compression-webpack-plugin')
 const baseConfig = require('./webpack.base.js')
 

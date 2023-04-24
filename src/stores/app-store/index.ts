@@ -2,6 +2,8 @@ import { observable, action } from 'mobx'
 import { BaseStore } from '../base-store'
 import { testApi } from '@/api'
 import { sleep } from '@/utils/sleep'
+import { urlWay } from '@/utils/url-way'
+import { numWay } from '@/utils/num-way'
 
 export class AppStore extends BaseStore {
   @observable token = 'token'
@@ -14,7 +16,7 @@ export class AppStore extends BaseStore {
 
   @action.bound
   async getUserInfo() {
-    await sleep(5000)
+    await sleep(2000)
     this.userInfo = {
       userName: 'zzc',
       phone: '1804243',
@@ -30,6 +32,8 @@ export class AppStore extends BaseStore {
     }
     const resData = await testApi(paramData)
     console.info(resData)
+    console.info(urlWay.formatSearchString('?name=zzc&phone=180'))
+    console.info(numWay.add(1.22, 2.55))
   }
 
   @action.bound

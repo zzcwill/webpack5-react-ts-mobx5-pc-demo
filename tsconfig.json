@@ -3,6 +3,8 @@
     "target": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "strictNullChecks": true,
+    // function定义参数可以不设置默认类型
+    "noImplicitAny": false,
     // 不让mobx的observable和action-报错
     "experimentalDecorators": true,
     "allowJs": true,
