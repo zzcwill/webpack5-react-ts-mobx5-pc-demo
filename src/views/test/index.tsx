@@ -7,7 +7,7 @@ import { observer } from 'mobx-react-lite'
 import classNames from 'classnames'
 import { urlWay } from '@/utils/url-way'
 
-import './index.less'
+// import './index.less'
 
 const Test = observer(() => {
   const routerLocation  = useLocation()

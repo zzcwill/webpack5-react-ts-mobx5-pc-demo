@@ -40,6 +40,13 @@ module.exports = {
             options: {
               modules: {
                 localIdentName: '[local]--[hash:5]',
+                mode: (resourcePath) => {
+                  if (/module.css$/i.test(resourcePath)) {
+                    return 'local'
+                  }
+
+                  return 'global'
+                },
               },
             },
           },
@@ -56,10 +63,17 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-                modules: {
-                  localIdentName: '[local]--[hash:5]',
+              modules: {
+                localIdentName: '[local]--[hash:5]',
+                mode: (resourcePath) => {
+                  if (/module.less$/i.test(resourcePath)) {
+                    return 'local'
+                  }
+
+                  return 'global'
                 },
               },
+            },
           },
           // 使用postcss.config配置
           'postcss-loader',
@@ -67,39 +81,39 @@ module.exports = {
         ],
       },
       {
-        test:/.(png|jpg|jpeg|gif|svg)$/, // 匹配图片文件
+        test: /.(png|jpg|jpeg|gif|svg)$/, // 匹配图片文件
         type: 'asset', // type选择asset
         parser: {
           dataUrlCondition: {
             maxSize: 10 * 1024, // 小于10kb转base64位
           },
         },
-        generator:{
-          filename:'images/[name].[contenthash:8][ext]', // 文件输出目录和命名
+        generator: {
+          filename: 'images/[name].[contenthash:8][ext]', // 文件输出目录和命名
         },
       },
       {
-        test:/.(woff2?|eot|ttf|otf)$/, // 匹配字体图标文件
+        test: /.(woff2?|eot|ttf|otf)$/, // 匹配字体图标文件
         type: 'asset', // type选择asset
         parser: {
           dataUrlCondition: {
             maxSize: 10 * 1024, // 小于10kb转base64位
           },
         },
-        generator:{
-          filename:'fonts/[name].[contenthash:8][ext]', // 文件输出目录和命名
+        generator: {
+          filename: 'fonts/[name].[contenthash:8][ext]', // 文件输出目录和命名
         },
       },
       {
-        test:/.(mp4|webm|ogg|mp3|wav|flac|aac)$/, // 匹配媒体文件
+        test: /.(mp4|webm|ogg|mp3|wav|flac|aac)$/, // 匹配媒体文件
         type: 'asset', // type选择asset
         parser: {
           dataUrlCondition: {
             maxSize: 10 * 1024, // 小于10kb转base64位
           },
         },
-        generator:{
-          filename:'media/[name].[contenthash:8][ext]', // 文件输出目录和命名
+        generator: {
+          filename: 'media/[name].[contenthash:8][ext]', // 文件输出目录和命名
         },
       },
     ],
@@ -125,7 +139,7 @@ module.exports = {
     new WebpackBar({
       color: 'green',  // 默认green，进度条颜色支持HEX
       basic: false,   // 默认true，启用一个简单的日志报告器
-      profile:false,  // 默认false，启用探查器。
+      profile: false,  // 默认false，启用探查器。
     }),
   ],
   cache: {
