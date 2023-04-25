@@ -23,6 +23,7 @@ import logo from '@/assets/images/logo.png'
 
 import './index.css'
 import './index.less'
+import styles from './index.module.less'
 
 const Home = observer(() => {
   // const [{appStore}] = useStore()
@@ -47,6 +48,7 @@ const Home = observer(() => {
       <Demo1 />
       <br />
       <div
+        className={classNames(styles.bule)}
         onClick={()=> {
           setShow(true)
         }}

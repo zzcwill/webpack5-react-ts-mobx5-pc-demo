@@ -35,7 +35,14 @@ module.exports = {
         use: [
           // 开发环境使用style-looader,打包模式抽离css
           isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: '[local]--[hash:5]',
+              },
+            },
+          },
           // 使用postcss.config配置
           'postcss-loader',
         ],
@@ -46,7 +53,14 @@ module.exports = {
         use: [
           // 开发环境使用style-looader,打包模式抽离css
           isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+                modules: {
+                  localIdentName: '[local]--[hash:5]',
+                },
+              },
+          },
           // 使用postcss.config配置
           'postcss-loader',
           'less-loader',
