@@ -20,8 +20,6 @@ const Home = observer(() => {
   // const [{appStore}] = useStore()
   const navigate = useNavigate()
 
-
-
   return (
     <div className={classNames('home')}>
       <div className="info">info</div>

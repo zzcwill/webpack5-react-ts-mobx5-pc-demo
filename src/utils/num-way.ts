@@ -1,7 +1,7 @@
 import Decimal from 'decimal.js'
 // import isNumber from 'lodash/isNumber'
 
-class NumWay{
+class NumWay {
   toNum (resNum: any, decimalNum: number) {
     return resNum.toSignificantDigits(decimalNum).toNumber()
   }

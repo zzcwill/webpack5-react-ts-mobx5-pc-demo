@@ -14,7 +14,7 @@ const App = () => {
 const initApp = async () => {
   const root = document.getElementById('root')
 
-  if(root) {
+  if (root) {
     createRoot(root).render(<App />)
   }
 }

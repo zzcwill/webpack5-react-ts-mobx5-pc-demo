@@ -27,19 +27,17 @@ module.exports = {
     'semi': ['error', 'never'], // 一行结尾不加分号
     'quotes': ['error', 'single'], // 单引号
     'comma-dangle': ['error', 'always-multiline'], // 对象或数组多行，最后一个值加逗号
-    'no-debugger': 1,
+    'no-debugger': 1, // no debugger
+    'no-trailing-spaces': 1, // 一行结束后面不要有空格
+    'space-infix-ops': 1, // 在操作符旁边必须有空格
+    'space-before-blocks': 1, // 语句块之前必须有空格
+    'spaced-comment': 1, // 注释前必须有空格
+    'arrow-spacing': [1, { 'before': true, 'after': true }], // 定义箭头函数的箭头前后都必须有空格
+    'keyword-spacing': [1, { 'before': true, 'after': true}], // 关键字前后必须有空格
     'no-unused-vars': 0,
     '@typescript-eslint/no-unused-vars': 1, // ts变量不使用关闭
     '@typescript-eslint/no-explicit-any': 0, // ts可以设置any
     '@typescript-eslint/no-var-requires': 0, // ts引入可以require
-    // '@typescript-eslint/explicit-module-boundary-types': 0,
-    // '@typescript-eslint/type-annotation-spacing': 'error',
-    // '@typescript-eslint/no-shadow': 'error',
-    // '@typescript-eslint/explicit-module-boundary-types': 'off',
-    // '@typescript-eslint/no-empty-function': 'off',
-    // '@typescript-eslint/ban-ts-comment': 'off',
-    // '@typescript-eslint/member-delimiter-style': 'off',
-    // '@typescript-eslint/no-empty-interface': 'off',
   },
   // eslint检测react版本
   settings: {

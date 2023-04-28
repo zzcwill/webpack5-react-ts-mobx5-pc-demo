@@ -12,7 +12,7 @@ const request = Axios.create({
     // 后端表单
     // 'Content-Type': 'application/x-www-form-urlencoded',
   },
-  //后端表单application/x-www-form-urlencoded的参数转对象
+  // 后端表单application/x-www-form-urlencoded的参数转对象
   // transformRequest: [function(data) {
   //   data = Qs.stringify(data)
   //   return data

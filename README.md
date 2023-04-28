@@ -22,5 +22,6 @@
 
 
 ### git-check
+- npx husky-init
 - npx husky add .husky/pre-commit 'npm run pre-check'
 - npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'
