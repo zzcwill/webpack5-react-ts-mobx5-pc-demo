@@ -32,9 +32,20 @@ module.exports = {
     'space-infix-ops': 1, // 在操作符旁边必须有空格
     'space-before-blocks': 1, // 语句块之前必须有空格
     'spaced-comment': 1, // 注释前必须有空格
-    'arrow-spacing': [1, { 'before': true, 'after': true }], // 定义箭头函数的箭头前后都必须有空格
-    'keyword-spacing': [1, { 'before': true, 'after': true}], // 关键字前后必须有空格
+    'arrow-spacing': [1, {
+      'before': true, 'after': true,
+    }], // 定义箭头函数的箭头前后都必须有空格
+    'keyword-spacing': [1, {
+      'before': true, 'after': true,
+    }], // 关键字前后必须有空格
     'no-unused-vars': 0,
+    'object-curly-newline': ['error', {
+      'ObjectPattern': {
+        'multiline': true,
+      },
+    }],
+    // 缩进2格
+    'indent': ['error', 2],
     '@typescript-eslint/no-unused-vars': 1, // ts变量不使用关闭
     '@typescript-eslint/no-explicit-any': 0, // ts可以设置any
     '@typescript-eslint/no-var-requires': 0, // ts引入可以require
