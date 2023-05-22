@@ -6,7 +6,6 @@ import {
 import { observer } from 'mobx-react-lite'
 import classNames from 'classnames'
 import copyToClipboard from 'copy-to-clipboard'
-// import { useStore } from '@/hooks'
 import { Demo1 } from '@/components'
 
 import logo from '@/assets/images/logo.png'
@@ -17,7 +16,6 @@ import './index.less'
 import styles from './index.module.less'
 
 const Home = observer(() => {
-  // const [{appStore}] = useStore()
   const navigate = useNavigate()
 
   return (

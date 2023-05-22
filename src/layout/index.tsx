@@ -8,7 +8,7 @@ import {
 import { useStore } from '@/hooks'
 
 export default observer(() => {
-  const [{appStore}] = useStore()
+  const [{ appStore }] = useStore()
 
   useEffect(() => {
     appStore.initAppData()

@@ -35,6 +35,7 @@ export class AppStore extends BaseStore {
     console.info(resData)
     console.info(urlWay.formatSearchString('?name=zzc&phone=180'))
     console.info(numWay.add(1.22, 2.55))
+    console.info(this.rootStore)
   }
 
   @action.bound
