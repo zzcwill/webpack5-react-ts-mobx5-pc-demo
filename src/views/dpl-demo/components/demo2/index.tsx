@@ -3,6 +3,6 @@ import './index.scss'
 
 export default () => {
   return (
-    <div className="demo1">demo1</div>
+    <div className="demo2">demo2</div>
   )
 }

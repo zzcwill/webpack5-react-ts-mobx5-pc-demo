@@ -1,14 +1,9 @@
 import React, { useState } from 'react'
 import { Tabs } from 'dpl-react'
 
-import {
-  useLocation,
-  // useNavigate,
-} from 'react-router-dom'
 import { observer } from 'mobx-react-lite'
 import classNames from 'classnames'
 
-import { urlWay } from '@/utils/url-way'
 import {
   Demo1,
   Demo2,
@@ -18,11 +13,10 @@ import 'dpl-react/dist/dpl.css'
 import 'react-better-table/dist/index.css'
 import './index.scss'
 
-const { TabPane } = Tabs
+const TabsBox: any = Tabs
+const TabPane: any = Tabs.TabPane
 
 const DplDemo = observer(() => {
-  const routerLocation  = useLocation()
-  console.info(urlWay.formatSearchString(routerLocation.search))
 
   const arrTab = [
     {
@@ -44,7 +38,7 @@ const DplDemo = observer(() => {
 
   return (
     <div className={classNames('dpl-demo')}>
-      <Tabs activeKey={tabKey} onChange={changeTab} className="demo-list">
+      <TabsBox activeKey={tabKey} onChange={changeTab} className="demo-list">
         {
           arrTab.map((item) => {
             return (
@@ -54,7 +48,7 @@ const DplDemo = observer(() => {
             )
           })
         }
-      </Tabs>
+      </TabsBox>
     </div>
   )
 })
