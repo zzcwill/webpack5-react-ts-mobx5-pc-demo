@@ -8,8 +8,9 @@
     // 不让mobx的observable和action-报错
     "experimentalDecorators": true,
     "allowJs": true,
-    "skipLibCheck": false,
-    "esModuleInterop": false,
+    // 跳过node_modules-ts校验
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -28,7 +29,7 @@
       ]
     }
   },
-  "include": ["./src"],
+  "include": ["src"],
   "exclude": [
     "node_modules",
   ],

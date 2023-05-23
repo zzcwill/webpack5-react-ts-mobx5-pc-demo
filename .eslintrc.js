@@ -46,6 +46,7 @@ module.exports = {
     }],
     // 缩进2格
     'indent': ['error', 2],
+    '@typescript-eslint/ban-ts-comment': 0, // 关闭 禁止ts-ignore
     '@typescript-eslint/no-unused-vars': 1, // ts变量不使用关闭
     '@typescript-eslint/no-explicit-any': 0, // ts可以设置any
     '@typescript-eslint/no-var-requires': 0, // ts引入可以require
