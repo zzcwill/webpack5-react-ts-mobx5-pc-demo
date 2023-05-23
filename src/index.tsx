@@ -3,6 +3,9 @@ import { BrowserRouter } from 'react-router-dom'
 import { createRoot } from 'react-dom/client'
 import Routes from '@/routes'
 
+import '@/styles/common.less'
+import '@/index.less'
+
 const initApp = async () => {
   const App = () => {
     return (

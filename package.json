@@ -77,11 +77,13 @@
     "copy-to-clipboard": "^3.3.3",
     "dayjs": "^1.11.7",
     "decimal.js": "^10.4.3",
+    "dpl-react": "^1.73.1",
     "lodash": "^4.17.21",
     "mobx": "^5.15.7",
     "mobx-react-lite": "^1.5.2",
     "qs": "^6.11.1",
     "react": "^18.2.0",
+    "react-better-table": "0.0.24",
     "react-dom": "^18.2.0",
     "react-router": "^6.10.0",
     "react-router-dom": "^6.10.0"

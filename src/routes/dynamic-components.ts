@@ -4,3 +4,5 @@ import { suspended } from './suspended'
 export const Home = suspended(() => import('@/views/home'))
 
 export const Test = suspended(() => import('@/views/test'))
+
+export const DplDemo = suspended(() => import('@/views/dpl-demo'))

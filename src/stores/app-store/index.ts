@@ -1,4 +1,5 @@
 import { observable, action } from 'mobx'
+
 import { testApi } from '@/api'
 import { sleep } from '@/utils/sleep'
 import { urlWay } from '@/utils/url-way'
@@ -40,9 +41,6 @@ export class AppStore extends BaseStore {
 
   @action.bound
   async initAppData() {
-    // console.log('NODE_ENV', process.env.NODE_ENV)
-    // console.log('BASE_ENV', process.env.BASE_ENV)
-
     this.appLoading = true
     await this.getUserInfo()
     await this.getTestApi()

@@ -4,7 +4,17 @@ import Layout from '@/layout'
 import {
   Home,
   Test,
+  DplDemo,
 } from './dynamic-components'
+
+// TODO - delect dpl
+const companyDplDemoRoute = {
+  path: '/dplDemo',
+  element: <DplDemo />,
+  meta: {
+    title: 'DplDemo',
+  },
+}
 
 const routes = [
   {
@@ -25,6 +35,7 @@ const routes = [
           title: 'Test',
         },
       },
+      companyDplDemoRoute,
       {
         path: '*',
         meta: {
@@ -36,7 +47,7 @@ const routes = [
   },
   {
     path: '',
-    element: <Navigate to="/" replace />,
+    element: <Navigate to="/dplDemo" replace />,
   },
 ]
 

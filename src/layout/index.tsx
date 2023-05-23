@@ -7,6 +7,8 @@ import {
 } from 'mobx-react-lite'
 import { useStore } from '@/hooks'
 
+import './index.less'
+
 export default observer(() => {
   const [{ appStore }] = useStore()
 
@@ -16,7 +18,9 @@ export default observer(() => {
 
   if (appStore.appLoading) {
     return (
-      <div>loading</div>
+      <div className='layout-loading'>
+        <div>layout-loading</div>
+      </div>
     )
   }
 

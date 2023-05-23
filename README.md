@@ -25,3 +25,7 @@
 - npx husky-init
 - npx husky add .husky/pre-commit 'npm run pre-check'
 - npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'
+
+### 公司私有包-请删除相关代码
+dpl-react
+react-better-table

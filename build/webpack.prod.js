@@ -4,16 +4,14 @@ const CopyPlugin = require('copy-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-// const globAll = require('glob-all')
-// const PurgeCSSPlugin = require('purgecss-webpack-plugin')
 const CompressionPlugin  = require('compression-webpack-plugin')
 const baseConfig = require('./webpack.base.js')
 
 module.exports = merge(baseConfig, {
   mode: 'production', // 生产模式,会开启tree-shaking和压缩代码,以及其他优化
   performance: {
-    maxEntrypointSize: 10240000, //10000k
-    maxAssetSize: 10240000, //10000k
+    maxEntrypointSize: 10240000, // 10000k
+    maxAssetSize: 10240000, // 10000k
   },
   plugins: [
     // 抽离css插件

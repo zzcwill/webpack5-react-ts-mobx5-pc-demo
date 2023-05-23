@@ -30,7 +30,17 @@ module.exports = {
         use: ['thread-loader', 'babel-loader'],
       },
       {
-        test: /.css$/, //匹配所有的 css 文件
+        test: /.css$/, // 匹配所有的 css 文件
+        include: [path.join(__dirname, '../node_modules')],
+        use: [
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+          },
+        ],
+      },
+      {
+        test: /.css$/, // 匹配所有的 css 文件
         include: [path.resolve(__dirname, '../src')],
         use: [
           // 开发环境使用style-looader,打包模式抽离css
@@ -55,7 +65,7 @@ module.exports = {
         ],
       },
       {
-        test: /.less$/, //匹配所有的 less 文件
+        test: /.less$/, // 匹配所有的 less 文件
         include: [path.resolve(__dirname, '../src')],
         use: [
           // 开发环境使用style-looader,打包模式抽离css
