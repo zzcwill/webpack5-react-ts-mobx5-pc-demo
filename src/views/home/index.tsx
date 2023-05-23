@@ -13,14 +13,16 @@ import logo from '@/assets/images/logo.png'
 
 import './index.css'
 import './index.less'
+import './index.scss'
 import styles from './index.module.less'
 
 const Home = observer(() => {
   const navigate = useNavigate()
 
   return (
-    <div className={classNames('home')}>
+    <div className={classNames('p10', 'home')}>
       <div className="info">info</div>
+      <div className="txt-scss">txt-scss</div>
       <div
         className={classNames('txt', styles.bule)}
         onClick={() => {
