@@ -24,13 +24,13 @@ module.exports = {
       {
         // 只对项目src文件的ts,tsx进行loader解析
         include: [path.resolve(__dirname, '../src')],
-        test: /.(ts|tsx)$/, // 匹配.ts, tsx文件
+        test: /\.(ts|tsx)$/, // 匹配.ts, tsx文件
         // babel-loader使用babel.config.js的配置
         // thread-loader开启多线程loader解析, 启动也要6s适合大项目
         use: ['thread-loader', 'babel-loader'],
       },
       {
-        test: /.css$/, // 匹配所有的 css 文件
+        test: /\.css$/, // 匹配所有的 css 文件
         include: [path.join(__dirname, '../node_modules')],
         use: [
           isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
@@ -40,7 +40,7 @@ module.exports = {
         ],
       },
       {
-        test: /.css$/, // 匹配所有的 css 文件
+        test: /\.css$/, // 匹配所有的 css 文件
         include: [path.resolve(__dirname, '../src')],
         use: [
           // 开发环境使用style-looader,打包模式抽离css
@@ -65,7 +65,40 @@ module.exports = {
         ],
       },
       {
-        test: /.less$/, // 匹配所有的 less 文件
+        test: /\.scss$/, // 匹配所有的 scss 文件
+        include: [path.resolve(__dirname, '../src')],
+        use: [
+          // 开发环境使用style-looader,打包模式抽离css
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+
+              modules: {
+                localIdentName: '[local]--[hash:5]',
+                mode: (resourcePath) => {
+                  if (/module.scss$/i.test(resourcePath)) {
+                    return 'local'
+                  }
+
+                  return 'global'
+                },
+              },
+            },
+          },
+          // 使用postcss.config配置
+          'postcss-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              // `dart-sass` 是首选
+              implementation: require('sass'),
+            },
+          },
+        ],
+      },
+      {
+        test: /\.less$/, // 匹配所有的 less 文件
         include: [path.resolve(__dirname, '../src')],
         use: [
           // 开发环境使用style-looader,打包模式抽离css
@@ -91,7 +124,7 @@ module.exports = {
         ],
       },
       {
-        test: /.(png|jpg|jpeg|gif|svg)$/, // 匹配图片文件
+        test: /\.(png|jpg|jpeg|gif|svg)$/, // 匹配图片文件
         type: 'asset', // type选择asset
         parser: {
           dataUrlCondition: {
@@ -103,7 +136,7 @@ module.exports = {
         },
       },
       {
-        test: /.(woff2?|eot|ttf|otf)$/, // 匹配字体图标文件
+        test: /\.(woff2?|eot|ttf|otf)$/, // 匹配字体图标文件
         type: 'asset', // type选择asset
         parser: {
           dataUrlCondition: {
@@ -115,7 +148,7 @@ module.exports = {
         },
       },
       {
-        test: /.(mp4|webm|ogg|mp3|wav|flac|aac)$/, // 匹配媒体文件
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)$/, // 匹配媒体文件
         type: 'asset', // type选择asset
         parser: {
           dataUrlCondition: {

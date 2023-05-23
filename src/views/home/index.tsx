@@ -12,8 +12,9 @@ import logo from '@/assets/images/logo.png'
 
 
 import './index.css'
-import './index.less'
 import './index.scss'
+import scssStyles from './index.module.scss'
+import './index.less'
 import styles from './index.module.less'
 
 const Home = observer(() => {
@@ -22,7 +23,10 @@ const Home = observer(() => {
   return (
     <div className={classNames('p10', 'home')}>
       <div className="info">info</div>
-      <div className="txt-scss">txt-scss</div>
+      <div className='scss-box'>
+        <div className="txt-scss">txt-scss</div>
+        <div className={classNames(scssStyles.scsshash)}>txt-scss-hash</div>
+      </div>
       <div
         className={classNames('txt', styles.bule)}
         onClick={() => {
