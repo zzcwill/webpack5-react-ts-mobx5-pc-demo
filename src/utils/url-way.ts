@@ -4,7 +4,8 @@ class UrlWay {
       .reduce((result, [key, value]) => {
         result[key] = value
         return result
-      }, {})
+      }, {
+      })
   }
 }
 

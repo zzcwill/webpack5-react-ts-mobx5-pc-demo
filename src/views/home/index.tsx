@@ -30,7 +30,10 @@ const Home = observer(() => {
       <div
         className={classNames('txt', styles.bule)}
         onClick={() => {
-          navigate({ pathname: '/test', search: '?name=1' })
+          navigate({
+            pathname: '/test',
+            search: '?name=1',
+          })
         }}
       >
         to-test-url

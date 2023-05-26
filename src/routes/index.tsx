@@ -21,8 +21,16 @@ const routes = [
     path: '/',
     element: <Layout />,
     children: [
+      companyDplDemoRoute,
       {
         path: '',
+        meta: {
+          title: 'Home',
+        },
+        element: <Navigate to="/dplDemo" replace />,
+      },
+      {
+        path: '/home',
         element: <Home />,
         meta: {
           title: 'Home',
@@ -35,19 +43,14 @@ const routes = [
           title: 'Test',
         },
       },
-      companyDplDemoRoute,
       {
         path: '*',
         meta: {
           title: '404',
         },
-        element: <Navigate to="/" replace />,
+        element: <Navigate to="/dplDemo" replace />,
       },
     ],
-  },
-  {
-    path: '',
-    element: <Navigate to="/dplDemo" replace />,
   },
 ]
 
