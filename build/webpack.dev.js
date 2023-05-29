@@ -26,12 +26,12 @@ module.exports = merge(baseConfig, {
           '^/api': '',
         },
       },
-      '/dpl': {
-        target: 'http://yqdz.invoice-test.sit.91lyd.com/invoiceweb',
+      '/dpl/': {
+        target: 'http://stp-web-pc.itp-test.sit.91lyd.com/invoiceweb/',
         changeOrigin: true,
         ws: true,
         pathRewrite: {
-          '^/dpl': '',
+          '^/dpl/': '',
         },
       },
     },

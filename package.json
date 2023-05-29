@@ -91,9 +91,8 @@
     "react-router-dom": "^6.10.0"
   },
   "lint-staged": {
-    "src": [
-      "npm run lint:staged",
-      "npm run stylelint"
+    "src/**/*.{ts,tsx}": [
+      "npm run lint:staged"
     ]
   }
 }

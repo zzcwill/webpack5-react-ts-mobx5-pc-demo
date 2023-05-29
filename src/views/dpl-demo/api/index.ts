@@ -56,6 +56,6 @@ export function invoiceSignQueryInvoiceSignList() {
   return request({
     url: '/invoice/sign/queryInvoiceSignList',
     method: 'post',
-    params: paramData,
+    data: paramData,
   })
 }
