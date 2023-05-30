@@ -42,12 +42,25 @@ import request from './request'
 // }
 
 export function invoiceSignQueryInvoiceSignList() {
-  const paramData = {
+  // test
+  let paramData: any = {
     'page': 1,
     'pageSize': 100,
-    'signDateBegin': '2023-04-29',
-    'signDateEnd': '2023-05-29',
+    'signDateBegin': '2023-04-30',
+    'signDateEnd': '2023-05-30',
     'customerId': '1888472711388',
+    'sortName': 'create_date',
+    'sortOrder': 'desc',
+    'signStatus': '1',
+  }
+
+  // release
+  paramData = {
+    'page': 1,
+    'pageSize': 100,
+    'signDateBegin': '2023-04-30',
+    'signDateEnd': '2023-05-30',
+    'customerId': '8156385560790159',
     'sortName': 'create_date',
     'sortOrder': 'desc',
     'signStatus': '1',

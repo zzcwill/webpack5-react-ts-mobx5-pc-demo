@@ -4,6 +4,13 @@ const { merge } = require('webpack-merge')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const baseConfig = require('./webpack.base.js')
 
+const apiUrl = {
+  // 'dev': 'http://stp-web-pc.itp-test.sit.91lyd.com',
+  'dev': 'http://stp-web-pc.servyou-release.devops.91lyd.com',
+  'test': 'http://stp-web-pc.itp-test.sit.91lyd.com',
+  'release': 'http://stp-web-pc.servyou-release.devops.91lyd.com',
+}
+
 // 合并公共配置,并添加开发环境配置
 module.exports = merge(baseConfig, {
   mode: 'development', // 开发模式,打包更加快速,省了代码优化步骤
@@ -28,7 +35,7 @@ module.exports = merge(baseConfig, {
         },
       },
       '/dpl/': {
-        target: 'http://stp-web-pc.itp-test.sit.91lyd.com/invoiceweb/',
+        target: `${apiUrl[process.env.BASE_ENV]}/invoiceweb/`,
         changeOrigin: true,
         ws: true,
         pathRewrite: {

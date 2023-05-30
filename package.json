@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development BASE_ENV=dev webpack-dev-server -c build/webpack.dev.js",
     "dev:test": "cross-env NODE_ENV=development BASE_ENV=test webpack-dev-server -c build/webpack.dev.js",
+    "dev:release": "cross-env NODE_ENV=development BASE_ENV=release webpack-dev-server -c build/webpack.dev.js",
     "dev:pre": "cross-env NODE_ENV=development BASE_ENV=pre webpack-dev-server -c build/webpack.dev.js",
     "dev:prod": "cross-env NODE_ENV=development BASE_ENV=prod webpack-dev-server -c build/webpack.dev.js",
     "build": "cross-env NODE_ENV=production BASE_ENV=dev webpack -c build/webpack.prod.js",
