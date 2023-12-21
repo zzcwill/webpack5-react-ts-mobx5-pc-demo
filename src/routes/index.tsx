@@ -48,7 +48,7 @@ const routes = [
         meta: {
           title: '404',
         },
-        element: <Navigate to="/dplDemo" replace />,
+        element: <Navigate to="" replace />,
       },
     ],
   },

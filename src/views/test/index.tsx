@@ -6,6 +6,7 @@ import {
 import { observer } from 'mobx-react-lite'
 import classNames from 'classnames'
 import { urlWay } from '@/utils/url-way'
+import { Performance } from './performance'
 
 const Test = observer(() => {
   const routerLocation  = useLocation()
@@ -13,7 +14,7 @@ const Test = observer(() => {
 
   return (
     <div className={classNames('test')}>
-      test
+      <Performance />
     </div>
   )
 })

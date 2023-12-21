@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { observable, action } from 'mobx'
 
 import { testApi } from '@/api'
@@ -6,6 +7,7 @@ import { urlWay } from '@/utils/url-way'
 import { numWay } from '@/utils/num-way'
 
 import { BaseStore } from '../base-store'
+/* eslint-enable */
 
 export class AppStore extends BaseStore {
   @observable token = 'token'
@@ -18,7 +20,7 @@ export class AppStore extends BaseStore {
 
   @action.bound
   async getUserInfo() {
-    await sleep(2000)
+    // await sleep(2000)
     this.userInfo = {
       userName: 'zzc',
       phone: '1804243',
@@ -43,7 +45,7 @@ export class AppStore extends BaseStore {
   async initAppData() {
     this.appLoading = true
     await this.getUserInfo()
-    await this.getTestApi()
+    // await this.getTestApi()
     this.appLoading = false
   }
 }
