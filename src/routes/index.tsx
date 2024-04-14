@@ -4,30 +4,19 @@ import Layout from '@/layout'
 import {
   Home,
   Test,
-  DplDemo,
 } from './dynamic-components'
-
-// TODO - delect dpl
-const companyDplDemoRoute = {
-  path: '/dplDemo',
-  element: <DplDemo />,
-  meta: {
-    title: 'DplDemo',
-  },
-}
 
 const routes = [
   {
     path: '/',
     element: <Layout />,
     children: [
-      companyDplDemoRoute,
       {
         path: '',
         meta: {
           title: 'Home',
         },
-        element: <Navigate to="/dplDemo" replace />,
+        element: <Navigate to="/home" replace />,
       },
       {
         path: '/home',

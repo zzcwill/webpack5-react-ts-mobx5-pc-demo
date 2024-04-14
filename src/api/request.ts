@@ -1,6 +1,4 @@
 import Axios from 'axios'
-// import { Message } from ''
-// import Qs from 'qs'
 
 const request = Axios.create({
   // api的base_url
@@ -9,14 +7,7 @@ const request = Axios.create({
   headers: {
     // 后端json
     'Content-Type': 'application/json;charset=UTF-8',
-    // 后端表单
-    // 'Content-Type': 'application/x-www-form-urlencoded',
   },
-  // 后端表单application/x-www-form-urlencoded的参数转对象
-  // transformRequest: [function(data) {
-  //   data = Qs.stringify(data)
-  //   return data
-  // }],
 })
 
 // 设置请求头

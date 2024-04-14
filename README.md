@@ -8,21 +8,23 @@
 - typescript5
 - mobx5
 
-
+### node
+v16.14.0
 
 ### 项目运行
+- npm ls --depth 0 -g
 - 全局安装包安装
-- npm i -g cross-env
+- npm i -g cross-env yarn
 - 安装相应依赖包
-- npm i
+- yarn install
 - 开发环境运行
-- npm run dev
+- yarn dev
 - 生成项目打包文件
-- npm run build
+- yarn build
 
 
 ### git-check
-- npm run prepare
+- yarn run prepare
 - 设置nvm环境
 - /.husky/_/husky.sh
  export NVM_DIR="$HOME/.nvm"
@@ -33,7 +35,11 @@
 ### 配置husky监听commit-msg
 - npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'
 
-### 公司私有包-请删除相关代码
-dpl-react
-react-better-table
-想看的话，还需本地cookie登录模拟
+### npm
+yarn add axios classnames copy-to-clipboard dayjs decimal.js lodash mobx mobx-react-lite react react-dom react-router react-router-dom
+
+yarn add -D
+
+yarn add
+
+yarn remove

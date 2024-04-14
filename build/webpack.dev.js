@@ -1,7 +1,7 @@
 // webpack.dev.js
 const path = require('path')
 const { merge } = require('webpack-merge')
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+// const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const baseConfig = require('./webpack.base.js')
 
 const apiUrl = {
@@ -45,6 +45,6 @@ module.exports = merge(baseConfig, {
     },
   },
   plugins: [
-    new ReactRefreshWebpackPlugin(), // 添加热更新插件
+    // new ReactRefreshWebpackPlugin(), // 添加热更新插件
   ],
 })
