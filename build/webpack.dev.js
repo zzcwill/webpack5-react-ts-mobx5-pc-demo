@@ -1,15 +1,10 @@
 // webpack.dev.js
 const path = require('path')
 const { merge } = require('webpack-merge')
-// const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const baseConfig = require('./webpack.base.js')
 
-const apiUrl = {
-  // 'dev': 'http://stp-web-pc.itp-test.sit.91lyd.com',
-  'dev': 'http://stp-web-pc.servyou-release.devops.91lyd.com',
-  'test': 'http://stp-web-pc.itp-test.sit.91lyd.com',
-  'release': 'http://stp-web-pc.servyou-release.devops.91lyd.com',
-}
+console.info('env', process.env.BASE_ENV)
 
 // 合并公共配置,并添加开发环境配置
 module.exports = merge(baseConfig, {
@@ -34,17 +29,9 @@ module.exports = merge(baseConfig, {
           '^/api': '',
         },
       },
-      '/dpl/': {
-        target: `${apiUrl[process.env.BASE_ENV]}/invoiceweb/`,
-        changeOrigin: true,
-        ws: true,
-        pathRewrite: {
-          '^/dpl/': '',
-        },
-      },
     },
   },
   plugins: [
-    // new ReactRefreshWebpackPlugin(), // 添加热更新插件
+    new ReactRefreshWebpackPlugin(), // 添加热更新插件
   ],
 })
