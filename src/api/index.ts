@@ -1,4 +1,4 @@
-import request from './request'
+import request from './request';
 
 // post-demo
 // export function login(data) {
@@ -41,10 +41,10 @@ import request from './request'
 //   })
 // }
 
-export function testApi (paramData: any) {
+export function testApi(paramData: any) {
   return request({
     url: '/topics',
     method: 'get',
-    params: paramData,
-  })
+    params: paramData
+  });
 }

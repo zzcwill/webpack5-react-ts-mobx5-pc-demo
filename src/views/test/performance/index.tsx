@@ -32,7 +32,7 @@ const Performance = observer(() => {
   }, [])
 
   return (
-    <div>
+    <div className='performance'>
       Performance
     </div>
   )

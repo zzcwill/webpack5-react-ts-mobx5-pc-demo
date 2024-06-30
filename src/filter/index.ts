@@ -1,14 +1,14 @@
-const noDataStr = '--'
+const noDataStr = '--';
 
 export function strFilter(value: any) {
   if (value === undefined) {
-    return noDataStr
+    return noDataStr;
   }
   if (value === null) {
-    return noDataStr
+    return noDataStr;
   }
   if (value === '') {
-    return noDataStr
+    return noDataStr;
   }
-  return value
+  return value;
 }

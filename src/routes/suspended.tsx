@@ -4,11 +4,13 @@ import React, { Suspense, lazy } from 'react'
 export function suspended<T>(Component: any) {
   const LazyComponent = lazy(Component)
   const fallback = null
-  return (props: T) => (
+  const SuspenseInfo = (props: T) => (
     <Suspense fallback={fallback}>
       <LazyComponent
         {...props}
       />
     </Suspense>
   )
+
+  return SuspenseInfo;
 }

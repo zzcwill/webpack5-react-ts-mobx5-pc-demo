@@ -6,7 +6,6 @@ import {
 import { observer } from 'mobx-react-lite'
 import classNames from 'classnames'
 import copyToClipboard from 'copy-to-clipboard'
-import { Demo1 } from '@/components'
 
 import logo from '@/assets/images/logo.png'
 
@@ -40,7 +39,6 @@ const Home = observer(() => {
       </div>
       <img src={logo} onClick={() => { copyToClipboard('logo') }} />
       <br />
-      <Demo1 />
     </div>
   )
 })

@@ -1,36 +1,36 @@
 export function getStorage(key: string): any {
   if (!key) {
-    return ''
+    return '';
   }
-  let value: string = localStorage.getItem(key) || ''
+  let value: string = localStorage.getItem(key) || '';
   if (!value) {
-    return ''
+    return '';
   }
   try {
-    value = JSON.parse(value)
+    value = JSON.parse(value);
   } catch (e) {
-    console.warn(e)
+    console.warn(e);
   }
-  return value
+  return value;
 }
 
 export function setStorage(key: string, value: any) {
   if (!key) {
-    return false
+    return false;
   }
   try {
-    value = JSON.stringify(value)
+    value = JSON.stringify(value);
   } catch (e) {
-    console.error(e)
+    console.error(e);
   }
-  localStorage.setItem(key, value)
-  return true
+  localStorage.setItem(key, value);
+  return true;
 }
 
 export function removeStorage(key: string) {
   if (!key) {
-    return false
+    return false;
   }
-  localStorage.removeItem(key)
-  return true
+  localStorage.removeItem(key);
+  return true;
 }
