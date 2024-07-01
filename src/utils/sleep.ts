@@ -1,3 +1,3 @@
-export function sleep(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
+export const sleep = (millisecond: number) => {
+  return new Promise((resolve) => setTimeout(resolve, millisecond));
+};

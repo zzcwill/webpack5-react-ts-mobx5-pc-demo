@@ -1,3 +1,4 @@
+/* eslint-disable no-bitwise */
 export function uuid(len: number, radix?: number) {
   const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
   const result: string[] = [];

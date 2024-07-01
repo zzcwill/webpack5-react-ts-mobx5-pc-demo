@@ -1,10 +1,8 @@
 /* eslint-disable */
 import { action, observable } from 'mobx';
 
-import { testApi } from '@/api';
-import { numWay } from '@/utils/num-way';
+import { testApi } from '@/service';
 import { sleep } from '@/utils/sleep';
-import { urlWay } from '@/utils/url-way';
 
 import { BaseStore } from '../base-store';
 
@@ -37,8 +35,6 @@ export class AppStore extends BaseStore {
     };
     const resData = await testApi(paramData);
     console.info(resData);
-    console.info(urlWay.formatSearchString('?name=zzc&phone=180'));
-    console.info(numWay.add(1.22, 2.55));
     console.info(this.rootStore);
   }
 
