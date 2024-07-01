@@ -1,10 +1,7 @@
-import React from 'react'
-import { Navigate, useRoutes } from 'react-router-dom'
-import Layout from '@/layout'
-import {
-  Home,
-  Test,
-} from './dynamic-components'
+import React from 'react';
+import { Navigate, useRoutes } from 'react-router-dom';
+import Layout from '@/layout';
+import { Home, Test } from './dynamic-components';
 
 const routes = [
   {
@@ -14,39 +11,38 @@ const routes = [
       {
         path: '',
         meta: {
-          title: 'Home',
+          title: 'Home'
         },
-        element: <Navigate to="/home" replace />,
+        element: <Navigate to="/home" replace />
       },
       {
         path: '/home',
         element: <Home />,
         meta: {
-          title: 'Home',
-        },
+          title: 'Home'
+        }
       },
       {
         path: '/test',
         element: <Test />,
         meta: {
-          title: 'Test',
-        },
+          title: 'Test'
+        }
       },
       {
         path: '*',
         meta: {
-          title: '404',
+          title: '404'
         },
-        element: <Navigate to="" replace />,
-      },
-    ],
-  },
-]
+        element: <Navigate to="" replace />
+      }
+    ]
+  }
+];
 
 const Routes = () => {
-  const element = useRoutes(routes)
-  return element
-}
+  const element = useRoutes(routes);
+  return element;
+};
 
-
-export default Routes
+export default Routes;

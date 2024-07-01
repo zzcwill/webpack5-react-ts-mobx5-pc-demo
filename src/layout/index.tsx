@@ -1,30 +1,26 @@
-import React, { useEffect } from 'react'
-import {
-  Outlet,
-} from 'react-router-dom'
-import {
-  observer,
-} from 'mobx-react-lite'
-import { useStore } from '@/hooks'
+import React, { useEffect } from 'react';
+import { Outlet } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
+import { useStore } from '@/hooks';
 
-import './index.less'
+import './index.less';
 
-export default observer(() => {
-  const [{ appStore }] = useStore()
+const Layout = () => {
+  const [{ appStore }] = useStore();
 
   useEffect(() => {
-    appStore.initAppData()
-  }, [])
+    appStore.initAppData();
+  }, []);
 
   if (appStore.appLoading) {
     return (
-      <div className='layout-loading'>
+      <div className="layout-loading">
         <div>layout-loading</div>
       </div>
-    )
+    );
   }
 
-  return (
-    <Outlet />
-  )
-})
+  return <Outlet />;
+};
+
+export default observer(Layout);

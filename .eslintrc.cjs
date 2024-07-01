@@ -23,9 +23,9 @@ const config = {
   },
   env: {
     browser: true,
-    es2021: true
-  },
-  ignorePatterns: ['public/**/*.js']
+    es2021: true,
+    node: true
+  }
 };
 
 module.exports = config;

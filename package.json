@@ -71,7 +71,6 @@
     "stylelint": "^15.5.0",
     "stylelint-config-standard": "^33.0.0",
     "thread-loader": "^3.0.4",
-    "typescript": "^5.0.4",
     "webpack": "^5.79.0",
     "webpack-bundle-analyzer": "^4.8.0",
     "webpack-cli": "^5.0.1",
@@ -91,11 +90,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.10.0",
-    "react-router-dom": "^6.10.0"
+    "react-router-dom": "^6.10.0",
+    "typescript": "^5.5.2"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": [
-      "npm run lint:staged"
-    ]
+    "src/**/*.{ts,tsx}": ["npm run lint:staged"]
   }
 }

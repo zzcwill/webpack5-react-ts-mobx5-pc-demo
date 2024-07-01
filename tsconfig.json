@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": ["dom", "dom.iterable", "esnext"], // TS需要引用的库，即声明文件
     "strictNullChecks": true,
     // function定义参数可以不设置默认类型
     "noImplicitAny": false,
@@ -24,13 +24,9 @@
     // webpack-resolve-alias配置路径无提示，baseUrl和paths让ts自动提示
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     }
   },
-  "include": ["src"],
-  "exclude": [
-    "node_modules",
-  ],
+  "include": ["types/*", "./src/**/*.ts", "./src/**/*.tsx"],
+  "exclude": ["node_modules"]
 }

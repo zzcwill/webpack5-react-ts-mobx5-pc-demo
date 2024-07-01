@@ -1,43 +1,35 @@
-import React, { useEffect } from 'react'
-import { observer } from 'mobx-react-lite'
+import React, { useEffect } from 'react';
+import { observer } from 'mobx-react-lite';
 
 const Performance = observer(() => {
-
   function testa() {
-    testb()
+    testb();
   }
   function testb() {
-    let total = 0
+    let total = 0;
     for (let i = 0; i < 100 * 10000 * 10000; i++) {
-      total += i
+      total += i;
     }
-    console.log('testb', total)
+    console.log('testb', total);
   }
 
   function testc() {
-    testd()
+    testd();
   }
   function testd() {
-    let total = 0
+    let total = 0;
     for (let i = 0; i < 10 * 10000 * 10000; i++) {
-      total += i
+      total += i;
     }
-    console.log('testd', total)
+    console.log('testd', total);
   }
 
-
   useEffect(() => {
-    testa()
-    testc()
-  }, [])
+    testa();
+    testc();
+  }, []);
 
-  return (
-    <div className='performance'>
-      Performance
-    </div>
-  )
-})
+  return <div className="performance">Performance</div>;
+});
 
-export {
-  Performance,
-}
+export { Performance };

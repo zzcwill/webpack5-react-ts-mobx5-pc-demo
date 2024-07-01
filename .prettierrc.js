@@ -16,16 +16,6 @@ module.exports = {
   endOfLine: 'lf',
   overrides: [
     {
-      files: ['./src/**/*.tsx', './src/**/*.ts'],
-      options: {
-        plugins: [require.resolve('@trivago/prettier-plugin-sort-imports')],
-        importOrder: ['^react(.*)', '<THIRD_PARTY_MODULES>', '@/(.*)', '^[../]', '^[./]'],
-        importOrderSeparation: true,
-        importOrderSortSpecifiers: true,
-        importOrderParserPlugins: ['typescript', 'tsx', 'decorators-legacy']
-      }
-    },
-    {
       files: ['*.json'],
       options: {
         parser: 'json'

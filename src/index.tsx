@@ -1,10 +1,10 @@
-import React from 'react'
-import { BrowserRouter } from 'react-router-dom'
-import { createRoot } from 'react-dom/client'
-import Routes from '@/routes'
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { createRoot } from 'react-dom/client';
+import Routes from '@/routes';
 
-import '@/styles/common.less'
-import '@/index.less'
+import '@/styles/common.less';
+import '@/index.less';
 
 const initApp = async () => {
   const App = () => {
@@ -12,13 +12,13 @@ const initApp = async () => {
       <BrowserRouter>
         <Routes />
       </BrowserRouter>
-    )
-  }
+    );
+  };
 
-  const root = document.getElementById('root')
+  const root = document.getElementById('root');
   if (root) {
-    createRoot(root).render(<App />)
+    createRoot(root).render(<App />);
   }
-}
+};
 
-initApp()
+initApp();
