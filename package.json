@@ -2,7 +2,6 @@
   "name": "webpack5-react-ts-mobx-demo",
   "version": "1.0.0",
   "description": "webpack5-react-ts-mobx-demo",
-  "main": "./src/index.tsx",
   "scripts": {
     "dev": "cross-env NODE_ENV=development BASE_ENV=dev webpack-dev-server -c build/webpack.dev.js",
     "dev:test": "cross-env NODE_ENV=development BASE_ENV=test webpack-dev-server -c build/webpack.dev.js",
@@ -20,9 +19,6 @@
     "pre-check": "npx lint-staged",
     "prepare": "husky install"
   },
-  "keywords": [],
-  "author": "zzc",
-  "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.21.4",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
