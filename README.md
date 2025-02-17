@@ -10,8 +10,8 @@
 # dev
 
 - yarn install
-- yarn dev
-- yarn build
+- pnpm dev
+- pnpm build
 
 # 技术栈
 
